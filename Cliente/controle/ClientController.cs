@@ -1,8 +1,8 @@
-﻿namespace Cliente
+﻿namespace Cliente.controle
 {
-    internal class Validator
+    internal class ClientController
     {
-        public void NameValidate(Client C)
+        public void NameValidate(entidade.Client C)
         {
             Console.WriteLine("Insira o nome do cliente: ");
             C.Name = Console.ReadLine();
