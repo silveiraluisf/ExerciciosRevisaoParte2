@@ -4,17 +4,14 @@
     {
         public void NameValidate(entidade.Client C)
         {
-            Console.WriteLine("Insira o nome do cliente: ");
             C.Name = Console.ReadLine();
             string name = C.Name;
             switch (name.Length)
             {
                 case 0:
-                    Console.WriteLine("O nome não pode ser vazio!");
                     NameValidate(C);
                     break;
-                case < 5:
-                    Console.WriteLine("O nome deve possuir pelo menos 5 caracteres");
+                case < 5:                    
                     NameValidate(C);
                     break;
                 case >= 5:
@@ -23,9 +20,8 @@
             }
         }
 
-        public void CPFValidate(Client C)
+        public void CPFValidate(entidade.Client C)
         {
-            Console.WriteLine("Insira o CPF: ");
             string inputCPF = Console.ReadLine();
             long outputCPF;
             switch (inputCPF.Length)
@@ -39,20 +35,17 @@
                     }
                     else
                     {
-                        Console.WriteLine("Favor insira um CPF válido (11 caracteres, apenas números).");
                         CPFValidate(C);
                     }
                     break;
                 default:
-                    Console.WriteLine("Favor insira um CPF válido (11 caracteres, apenas números).");
                     CPFValidate(C);
                     break;
             }
         }
 
-        public void BirthDateValidate(Client C)
+        public void BirthDateValidate(entidade.Client C)
         {
-            Console.WriteLine("Insira a data de nascimento (DD/MM/AAAA):");
             string inputDate = Console.ReadLine();
             DateTime outputDate;
             DateTime now = DateTime.Now;
@@ -68,21 +61,18 @@
                 }
                 else
                 {
-                    Console.WriteLine("O cliente deve ter pelo menos 18 anos!");
                     BirthDateValidate(C);
                 }
             }
             else
             {
-                Console.WriteLine("Favor insira uma data no formato DD,MM,AAAA. ");
                 BirthDateValidate(C);
             }
 
         }
 
-        public void IncomeValidate(Client C)
+        public void IncomeValidate(entidade.Client C)
         {
-            Console.WriteLine("Insira a renda mensal: ");
             string inputIncome = Console.ReadLine();
             float outputIncome;
             bool parseSuccess = float.TryParse(inputIncome, out outputIncome);
@@ -92,14 +82,11 @@
             }
             else
             {
-                Console.WriteLine("Insira um valor válido em $.");
                 IncomeValidate(C);
             }
         }
-
-        public void StatusValidate(Client C)
+        public void StatusValidate(entidade.Client C)
         {
-            Console.WriteLine("Insira o estado civil (C, S, V ou D): ");
             string inputStatus = Console.ReadLine();
             char outputStatus;
             bool parseSuccess = char.TryParse(inputStatus, out outputStatus);
@@ -110,36 +97,29 @@
                 {
                     case 'C':
                         C.MaritalStatus = 'C';
-                        C.MaritalStatus = MaritalStatus;
                         break;
                     case 'S':
                         C.MaritalStatus = 'S';
-                        C.MaritalStatus = MaritalStatus;
                         break;
                     case 'V':
                         C.MaritalStatus = 'V';
-                        C.MaritalStatus = MaritalStatus;
                         break;
                     case 'D':
                         C.MaritalStatus = 'D';
-                        C.MaritalStatus = MaritalStatus;
                         break;
                     default:
-                        Console.WriteLine("Favor insira um estado civil válido (C, S, V ou D).");
                         StatusValidate(C);
                         break;
                 }
             }
             else
             {
-                Console.WriteLine("Favor insira um estado civil válido (C, S, V ou D).");
                 StatusValidate(C);
             }
         }
 
-        public void DependentsValidate(Client C)
+        public void DependentsValidate(entidade.Client C)
         {
-            Console.WriteLine("Insira o número de dependentes (de 0 a 10): ");
             string inputDependents = Console.ReadLine();
             int outputDependents;
             bool parseSuccess = int.TryParse(inputDependents, out outputDependents);
@@ -150,17 +130,15 @@
                 switch (n)
                 {
                     case >= 0 and <= 10:
-                        C.NumberOfDependents = NumberOfDependents;
+                        C.NumberOfDependents = outputDependents;
                         break;
                     default:
-                        Console.WriteLine("Favor insira um valor válido (entre 0 e 10).");
                         DependentsValidate(C);
                         break;
                 }
             }
             else
             {
-                Console.WriteLine("Favor insira um valor válido (entre 0 e 10).");
                 DependentsValidate(C);
             }
         }
