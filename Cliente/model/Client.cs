@@ -1,29 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Cliente.entidade
+﻿namespace Cliente.entidade
 {
     public class Client
     {
-        //private string Name;
-        //private long CPF;
-        //private DateTime BornDate;
-        //private float MonthlyIncome;
-        //private char MaritalStatus;
-        //private int NumberOfDependents;
-
+        private string _name;
+        private long _cpf;
         public string Name
         {
-            get { return Name; }
-            set { Name = value; }
+            get { return _name; }
+            set { _name = value; }
         }
         public long CPF
         {
-            get { return CPF; }
-            set { CPF = value; }
+            get { return _cpf; }
+            set { _cpf = value; }
         }
         public DateTime BornDate
         {
