@@ -14,6 +14,7 @@ namespace Cliente.controller
             ClientController x = new ClientController();
             Interface a = new Interface();
             Client c = new Client();
+            a.Title();
             x.AddClientName(a, c);
             x.AddClientCPF(a, c);
             x.AddClientBirthDate(a, c); 

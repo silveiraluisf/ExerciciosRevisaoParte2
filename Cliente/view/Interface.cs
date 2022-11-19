@@ -51,6 +51,12 @@ namespace Cliente.view
             get { return _errorList; }
             set { _errorList = value; }
         }
+
+        public void Title()
+        {
+            Console.WriteLine("---- BEM-VINDO AO CADASTRO DE CLIENTE -----");
+            Console.WriteLine("");
+        }
         public void GetName(Client C)
         {
             Console.WriteLine("Insira o nome do cliente: ");
@@ -88,9 +94,11 @@ namespace Cliente.view
 
         public void ShowData(Client C)
         {
+            Console.WriteLine("---- CLIENTE CADASTRADO ----");
+            Console.WriteLine("");
             Console.WriteLine($"Nome: {C.Name}");
-            Console.WriteLine($"CPF: {C.CPF}");
-            Console.WriteLine($"Data de nascimento: {C.BirthDate}");
+            Console.WriteLine($"CPF: {C.CPF.ToString("00000000000")}");
+            Console.WriteLine($"Data de nascimento: {C.BirthDate.ToString("dd/MM/yyyy")}");
             Console.WriteLine($"Renda mensal: {C.MonthlyIncome}");
             Console.WriteLine($"Estado civil: {C.MaritalStatus}");
             Console.WriteLine($"Número de dependentes: {C.NumberOfDependents}");
