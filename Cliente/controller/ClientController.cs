@@ -40,9 +40,9 @@ namespace Cliente.controller
             }
             }
 
-        public void CPFValidate(Client C)
+        public void CPFValidate(Interface a, Client C)
         {
-            string inputCPF = C.CPF.ToString();
+            string inputCPF = a.InputCPF;
             long outputCPF;
             switch (inputCPF.Length)
             {
