@@ -8,32 +8,32 @@ namespace Cliente.controller
 
         public void AddClientName(Interface a, Client c)
         {
-            a.GetName(c);
+            a.GetName();
         }
 
         public void AddClientCPF(Interface a, Client c)
         {
-            a.GetCPF(c);
+            a.GetCPF();
         }
 
         public void AddClientBirthDate(Interface a, Client c)
         {
-            a.GetDate(c);
+            a.GetDate();
         }
 
         public void AddClientIncome(Interface a, Client c)
         {
-            a.GetIncome(c);
+            a.GetIncome();
         }
 
         public void AddClientMaritalStatus(Interface a, Client c)
         {
-            a.GetStatus(c);
+            a.GetStatus();
         }
 
         public void AddNumberOfDependents(Interface a, Client c)
         {
-            a.GetDependents(c);
+            a.GetDependents();
         }
 
         public void ShowClient(Interface a, Client c)
@@ -48,12 +48,12 @@ namespace Cliente.controller
             {
                 case 0:
                     a.ErrorMessages(0);
-                    a.GetName(c);
+                    a.GetName();
                     NameValidate(a, c);
                     break;
                 case < 5:
                     a.ErrorMessages(1);
-                    a.GetName(c);
+                    a.GetName();
                     NameValidate(a, c);
                     break;
                 case >= 5:
@@ -77,13 +77,13 @@ namespace Cliente.controller
                     else
                     {
                         a.ErrorMessages(2);
-                        a.GetCPF(c);
+                        a.GetCPF();
                         CPFValidate(a, c);
                     }
                     break;
                 default:
                     a.ErrorMessages(2);
-                    a.GetCPF(c);
+                    a.GetCPF();
                     CPFValidate(a, c);
                     break;
             }
@@ -107,14 +107,14 @@ namespace Cliente.controller
                 else
                 {
                     a.ErrorMessages(3);
-                    a.GetDate(c);
+                    a.GetDate();
                     BirthDateValidate(a, c);
                 }
             }
             else
             {
                 a.ErrorMessages(4);
-                a.GetDate(c);
+                a.GetDate();
                 BirthDateValidate(a, c);
             }
         }
@@ -131,7 +131,7 @@ namespace Cliente.controller
             else
             {
                 a.ErrorMessages(5);
-                a.GetIncome(c);
+                a.GetIncome();
                 IncomeValidate(a, c);
             }
         }
@@ -160,7 +160,7 @@ namespace Cliente.controller
                         break;
                     default:
                         a.ErrorMessages(6);
-                        a.GetStatus(c);
+                        a.GetStatus();
                         StatusValidate(a, c);
                         break;
                 }
@@ -168,7 +168,7 @@ namespace Cliente.controller
             else
             {
                 a.ErrorMessages(6);
-                a.GetStatus(c);
+                a.GetStatus();
                 StatusValidate(a, c);
             }
         }
@@ -189,7 +189,7 @@ namespace Cliente.controller
                         break;
                     default:
                         a.ErrorMessages(7);
-                        a.GetDependents(c);
+                        a.GetDependents();
                         DependentsValidate(a, c);
                         break;
                 }
@@ -197,7 +197,7 @@ namespace Cliente.controller
             else
             {
                 a.ErrorMessages(7);
-                a.GetDependents(c);
+                a.GetDependents();
                 DependentsValidate(a, c);
             }
         }

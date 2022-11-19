@@ -6,9 +6,15 @@ namespace Turma.controller
 {
     public class ClassController
     {
-        public void AddStudent(List<Student> students)
+        public void AddStudent(List<Student> students, ClassInterface a)
         {
-            students.Add(new Student() { });
+            Student student= new Student();
+            student.Name = a.InputName;
+            string inputRegistration = a.InputRegistration;
+            long outputRegistration;
+            long.TryParse(inputRegistration, out outputRegistration);
+            student.Registration= outputRegistration;
+            students.Add(student);
         }
         public void RemoveStudent(List<Student> students)
         {
