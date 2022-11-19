@@ -14,14 +14,7 @@ namespace Turma.controller
         {
             students.Remove(new Student() { });
         }
-        public void P1Score(Student student)
-        {
-            return;
-        }
-        public void P2Score(Student student)
-        {
-            return;
-        }
+
         public void GetStudents(List<Student> c, ClassInterface a)
         {
             c = c.OrderBy(e => e.Name).ToList();
