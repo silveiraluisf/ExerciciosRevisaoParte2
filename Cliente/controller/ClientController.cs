@@ -6,32 +6,32 @@ namespace Cliente.controller
     public class ClientController
     {
 
-        public void AddClientName(Interface a, Client c)
+        public void AddClientName(Interface a)
         {
             a.GetName();
         }
 
-        public void AddClientCPF(Interface a, Client c)
+        public void AddClientCPF(Interface a)
         {
             a.GetCPF();
         }
 
-        public void AddClientBirthDate(Interface a, Client c)
+        public void AddClientBirthDate(Interface a)
         {
             a.GetDate();
         }
 
-        public void AddClientIncome(Interface a, Client c)
+        public void AddClientIncome(Interface a)
         {
             a.GetIncome();
         }
 
-        public void AddClientMaritalStatus(Interface a, Client c)
+        public void AddClientMaritalStatus(Interface a)
         {
             a.GetStatus();
         }
 
-        public void AddNumberOfDependents(Interface a, Client c)
+        public void AddNumberOfDependents(Interface a)
         {
             a.GetDependents();
         }
