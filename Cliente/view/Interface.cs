@@ -6,6 +6,7 @@ namespace Cliente.view
     {
         private string _inputName;
         private string _inputCPF;
+        private string _inputDate;
 
         public string InputName
         {
@@ -16,17 +17,28 @@ namespace Cliente.view
             get { return _inputCPF; }
             set { _inputCPF = value; } 
         }
+
+        public string InputDate
+        {
+            get { return _inputDate; }
+            set { _inputDate = value; }
+        }
         public void GetName(Client C)
         {
             Console.WriteLine("Insira o nome do cliente: ");
-            this._inputName = Console.ReadLine();
-            
+            this._inputName = Console.ReadLine();           
         }
 
         public void GetCPF(Client C)
         {
             Console.WriteLine("Insira o CPF: ");
             this._inputCPF = Console.ReadLine();
+        }
+
+        public void GetDate(Client C)
+        {
+            Console.WriteLine("Insira da data de nascimento (dd/mm/aaaa): ");
+            this._inputDate = Console.ReadLine();
         }
 
         public void ShowData(Client C)
