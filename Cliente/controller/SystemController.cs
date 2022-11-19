@@ -15,12 +15,12 @@ namespace Cliente.controller
             Interface a = new Interface();
             Client c = new Client();
             a.Title();
-            x.AddClientName(a, c);
-            x.AddClientCPF(a, c);
-            x.AddClientBirthDate(a, c); 
-            x.AddClientIncome(a, c);
-            x.AddClientMaritalStatus(a, c);
-            x.AddNumberOfDependents(a, c);  
+            x.AddClientName(a);
+            x.AddClientCPF(a);
+            x.AddClientBirthDate(a); 
+            x.AddClientIncome(a);
+            x.AddClientMaritalStatus(a);
+            x.AddNumberOfDependents(a);  
             x.NameValidate(a, c);
             x.CPFValidate(a, c);
             x.BirthDateValidate(a, c);
