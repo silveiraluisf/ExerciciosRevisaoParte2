@@ -4,21 +4,22 @@ namespace Cliente.view
 {
     public class Interface
     {
+        private string _inputName;
         private string _inputCPF;
+
+        public string InputName
+        {
+            get { return _inputName; }
+            set { _inputName = value; }
+        }
         public string InputCPF {
-            get 
-            { 
-                return _inputCPF; 
-            }
-            set 
-            {
-                _inputCPF = value;
-            } 
+            get { return _inputCPF; }
+            set { _inputCPF = value; } 
         }
         public void GetName(Client C)
         {
             Console.WriteLine("Insira o nome do cliente: ");
-            C.Name = Console.ReadLine();
+            this._inputName = Console.ReadLine();
             
         }
 

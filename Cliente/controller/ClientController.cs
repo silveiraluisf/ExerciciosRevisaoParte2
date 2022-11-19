@@ -23,7 +23,7 @@ namespace Cliente.controller
 
         public void NameValidate(Interface a, Client c)
         {
-            string name = c.Name;
+            string name = a.InputName;
             switch (name.Length)
             {
                 case 0:
