@@ -101,14 +101,14 @@ namespace Cliente.view
         {
             this._errorList = new List<string> 
             { 
-                "O nome não pode ser vazio!" ,
-                "O nome deve possuir pelo menos 5 caracteres",
-                "Favor insira um CPF válido (11 caracteres, apenas números).",
-                "O cliente deve ter pelo menos 18 anos!",
-                "Favor insira uma data no formato DD,MM,AAAA. ",
-                "Insira um valor válido em $.",
-                "Favor insira um estado civil válido (C, S, V ou D).",
-                "Favor insira um valor válido (entre 0 e 10)."
+                $"Erro no nome: {_inputName} -> O nome não pode ser vazio!" ,
+                $"Erro no nome: {_inputName} -> O nome deve possuir pelo menos 5 caracteres",
+                $"Erro no CPF: {_inputCPF} -> Favor insira um CPF válido (11 caracteres, apenas números).",
+                $"Erro na data de nascimento: {_inputDate} -> O cliente deve ter pelo menos 18 anos!",
+                $"Erro na data de nascimento: { _inputDate} -> Favor insira uma data no formato DD,MM,AAAA. ",
+                $"Erro na renda mensal: {_inputIncome} -> Insira um valor válido em $.",
+                $"Erro no estado civil: {_inputStatus} -> Favor insira um estado civil válido (C, S, V ou D).",
+                $"Erro no número de dependentes: {_inputNOfDependents} -> Favor insira um valor válido (entre 0 e 10)."
             };
             Console.WriteLine($"{ErrorList[n]}");
         }

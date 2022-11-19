@@ -49,9 +49,12 @@ namespace Cliente.controller
                 case 0:
                     a.ErrorMessages(0);
                     a.GetName(c);
+                    NameValidate(a, c);
                     break;
                 case < 5:
                     a.ErrorMessages(1);
+                    a.GetName(c);
+                    NameValidate(a, c);
                     break;
                 case >= 5:
                     c.Name = name;
@@ -59,7 +62,7 @@ namespace Cliente.controller
             }
         }
 
-        public void CPFValidate(Interface a, Client C)
+        public void CPFValidate(Interface a, Client c)
         {
             string inputCPF = a.InputCPF;
             long outputCPF;
@@ -69,15 +72,19 @@ namespace Cliente.controller
                     bool parseSuccess = long.TryParse(inputCPF, out outputCPF);
                     if (parseSuccess)
                     {
-                        C.CPF = outputCPF;
+                        c.CPF = outputCPF;
                     }
                     else
                     {
                         a.ErrorMessages(2);
+                        a.GetCPF(c);
+                        CPFValidate(a, c);
                     }
                     break;
                 default:
                     a.ErrorMessages(2);
+                    a.GetCPF(c);
+                    CPFValidate(a, c);
                     break;
             }
         }
@@ -100,11 +107,15 @@ namespace Cliente.controller
                 else
                 {
                     a.ErrorMessages(3);
+                    a.GetDate(c);
+                    BirthDateValidate(a, c);
                 }
             }
             else
             {
                 a.ErrorMessages(4);
+                a.GetDate(c);
+                BirthDateValidate(a, c);
             }
         }
 
@@ -120,6 +131,8 @@ namespace Cliente.controller
             else
             {
                 a.ErrorMessages(5);
+                a.GetIncome(c);
+                IncomeValidate(a, c);
             }
         }
 
@@ -147,12 +160,16 @@ namespace Cliente.controller
                         break;
                     default:
                         a.ErrorMessages(6);
+                        a.GetStatus(c);
+                        StatusValidate(a, c);
                         break;
                 }
             }
             else
             {
                 a.ErrorMessages(6);
+                a.GetStatus(c);
+                StatusValidate(a, c);
             }
         }
 
@@ -172,12 +189,16 @@ namespace Cliente.controller
                         break;
                     default:
                         a.ErrorMessages(7);
+                        a.GetDependents(c);
+                        DependentsValidate(a, c);
                         break;
                 }
             }
             else
             {
                 a.ErrorMessages(7);
+                a.GetDependents(c);
+                DependentsValidate(a, c);
             }
         }
     }
