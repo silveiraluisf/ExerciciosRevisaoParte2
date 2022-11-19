@@ -1,6 +1,4 @@
 ﻿using Cliente.controller;
-using Cliente.model;
-using Cliente.view;
 
 namespace Cliente
 {

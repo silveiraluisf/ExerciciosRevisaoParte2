@@ -8,7 +8,7 @@ namespace Cliente.controller
 
         public void AddClientName(Interface a, Client c)
         {
-            a.GetName(c);            
+            a.GetName(c);
         }
 
         public void AddClientCPF(Interface a, Client c)
@@ -19,6 +19,21 @@ namespace Cliente.controller
         public void AddClientBirthDate(Interface a, Client c)
         {
             a.GetDate(c);
+        }
+
+        public void AddClientIncome(Interface a, Client c)
+        {
+            a.GetIncome(c);
+        }
+
+        public void AddClientMaritalStatus(Interface a, Client c)
+        {
+            a.GetStatus(c);
+        }
+
+        public void AddNumberOfDependents(Interface a, Client c)
+        {
+            a.GetDependents(c);
         }
 
         public void ShowClient(Interface a, Client c)
@@ -42,7 +57,7 @@ namespace Cliente.controller
                     c.Name = name;
                     break;
             }
-            }
+        }
 
         public void CPFValidate(Interface a, Client C)
         {
@@ -76,11 +91,11 @@ namespace Cliente.controller
             bool parseSuccess = DateTime.TryParse(inputDate, out outputDate);
             if (parseSuccess)
             {
-                c.BornDate = Convert.ToDateTime(outputDate);
+                c.BirthDate = Convert.ToDateTime(outputDate);
                 TimeIntervalController timeInterval = new(outputDate, now);
                 if (timeInterval.Duration > eighteenYears)
                 {
-                    outputDate = c.BornDate;
+                    outputDate = c.BirthDate;
                 }
                 else
                 {
@@ -89,11 +104,82 @@ namespace Cliente.controller
             }
             else
             {
-                a.ErrorMessages(4);            
+                a.ErrorMessages(4);
             }
+        }
 
+        public void IncomeValidate(Interface a, Client c)
+        {
+            string inputIncome = a.InputIncome;
+            float outputIncome;
+            bool parseSuccess = float.TryParse(inputIncome, out outputIncome);
+            if (parseSuccess)
+            {
+                c.MonthlyIncome = (float)Convert.ToDouble(outputIncome);
+            }
+            else
+            {
+                a.ErrorMessages(5);
+            }
+        }
+
+        public void StatusValidate(Interface a, Client c)
+        {
+            string inputStatus = a.InputStatus;
+            char outputStatus;
+            bool parseSuccess = char.TryParse(inputStatus, out outputStatus);
+            if (parseSuccess)
+            {
+                Convert.ToChar(outputStatus);
+                switch (char.ToUpper(outputStatus))
+                {
+                    case 'C':
+                        c.MaritalStatus = 'C';
+                        break;
+                    case 'S':
+                        c.MaritalStatus = 'S';
+                        break;
+                    case 'V':
+                        c.MaritalStatus = 'V';
+                        break;
+                    case 'D':
+                        c.MaritalStatus = 'D';
+                        break;
+                    default:
+                        a.ErrorMessages(6);
+                        break;
+                }
+            }
+            else
+            {
+                a.ErrorMessages(6);
+            }
+        }
+
+        public void DependentsValidate(Interface a, Client c)
+        {
+            string inputDependents = a.InputNOfDependents;
+            int outputDependents;
+            bool parseSuccess = int.TryParse(inputDependents, out outputDependents);
+            if (parseSuccess)
+            {
+                c.NumberOfDependents = Convert.ToInt32(outputDependents);
+                int n = c.NumberOfDependents;
+                switch (n)
+                {
+                    case >= 0 and <= 10:
+                        c.NumberOfDependents = outputDependents;
+                        break;
+                    default:
+                        a.ErrorMessages(7);
+                        break;
+                }
+            }
+            else
+            {
+                a.ErrorMessages(7);
+            }
         }
     }
-    
 }
 

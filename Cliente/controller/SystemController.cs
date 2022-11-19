@@ -17,10 +17,16 @@ namespace Cliente.controller
             x.AddClientName(a, c);
             x.AddClientCPF(a, c);
             x.AddClientBirthDate(a, c); 
-            //x.ShowClient(a, c);
+            x.AddClientIncome(a, c);
+            x.AddClientMaritalStatus(a, c);
+            x.AddNumberOfDependents(a, c);  
             x.NameValidate(a, c);
             x.CPFValidate(a, c);
             x.BirthDateValidate(a, c);
+            x.IncomeValidate(a, c);
+            x.StatusValidate(a, c);
+            x.DependentsValidate(a, c);
+            x.ShowClient(a, c);
         }
     }
 }

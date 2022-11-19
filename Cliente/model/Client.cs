@@ -4,6 +4,10 @@
     {
         private string _name;
         private long _cpf;
+        private DateTime _bornDate;
+        private float _income;
+        private char _status;
+        private int _n;
         public string Name
         {
             get { return _name; }
@@ -14,25 +18,25 @@
             get { return _cpf; }
             set { _cpf = value; }
         }
-        public DateTime BornDate
+        public DateTime BirthDate
         {
-            get { return BornDate; }
-            set { BornDate = value; }
+            get { return _bornDate; }
+            set { _bornDate = value; }
         }
         public float MonthlyIncome
         {
-            get { return MonthlyIncome; }
-            set { MonthlyIncome = value; }
+            get { return _income; }
+            set { _income = value; }
         }
         public char MaritalStatus
         {
-            get { return MaritalStatus; }
-            set { MaritalStatus = value; }
+            get { return _status; }
+            set { _status = value; }
         }
         public int NumberOfDependents
         {
-            get { return NumberOfDependents; }
-            set { NumberOfDependents = value; }
+            get { return _n; }
+            set { _n = value; }
         }
 
     }

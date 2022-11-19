@@ -24,10 +24,7 @@
 
             public TimeSpan Duration
             {
-                get
-                {
-                    return _F - _I;
-                }
+                get { return _F - _I; }
             }
 
             public TimeIntervalController(DateTime dateI, DateTime dateF)
