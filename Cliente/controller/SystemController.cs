@@ -16,9 +16,11 @@ namespace Cliente.controller
             Client c = new Client();
             x.AddClientName(a, c);
             x.AddClientCPF(a, c);
+            x.AddClientBirthDate(a, c); 
             //x.ShowClient(a, c);
             x.NameValidate(a, c);
             x.CPFValidate(a, c);
+            x.BirthDateValidate(a, c);
         }
     }
 }

@@ -7,6 +7,7 @@ namespace Cliente.view
         private string _inputName;
         private string _inputCPF;
         private string _inputDate;
+        private List<string> _errorList;
 
         public string InputName
         {
@@ -22,6 +23,12 @@ namespace Cliente.view
         {
             get { return _inputDate; }
             set { _inputDate = value; }
+        }
+
+        public List<string> ErrorList 
+        { 
+            get { return _errorList; }
+            set { _errorList = value; }
         }
         public void GetName(Client C)
         {
@@ -48,9 +55,18 @@ namespace Cliente.view
             
         }
 
-        public void ErrorMessages()
+        public void ErrorMessages(int n)
         {
-            Console.WriteLine("O nome não pode ser vazio!");
+            this._errorList = new List<string> 
+            { 
+                "O nome não pode ser vazio!" ,
+                "O nome deve possuir pelo menos 5 caracteres",
+                "Favor insira um CPF válido (11 caracteres, apenas números).",
+                "O cliente deve ter pelo menos 18 anos!",
+                "Favor insira uma data no formato DD,MM,AAAA. "
+
+            };
+            Console.WriteLine($"{ErrorList[n]}");
         }
     }
 }

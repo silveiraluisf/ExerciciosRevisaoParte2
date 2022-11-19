@@ -32,12 +32,11 @@ namespace Cliente.controller
             switch (name.Length)
             {
                 case 0:
-                    a.ErrorMessages();
+                    a.ErrorMessages(0);
                     a.GetName(c);
                     break;
                 case < 5:
-                    Console.WriteLine("O nome deve possuir pelo menos 5 caracteres");
-                    //NameValidate(c);
+                    a.ErrorMessages(1);
                     break;
                 case >= 5:
                     c.Name = name;
@@ -59,13 +58,11 @@ namespace Cliente.controller
                     }
                     else
                     {
-                        Console.WriteLine("Favor insira um CPF válido (11 caracteres, apenas números).");
-                        //CPFValidate(C);
+                        a.ErrorMessages(2);
                     }
                     break;
                 default:
-                    Console.WriteLine("Favor insira um CPF válido (11 caracteres, apenas números).");
-                    //CPFValidate(C);
+                    a.ErrorMessages(2);
                     break;
             }
         }
@@ -87,14 +84,12 @@ namespace Cliente.controller
                 }
                 else
                 {
-                    Console.WriteLine("O cliente deve ter pelo menos 18 anos!");
-                    //BirthDateValidate(c);
+                    a.ErrorMessages(3);
                 }
             }
             else
             {
-                Console.WriteLine("Favor insira uma data no formato DD,MM,AAAA. ");
-                //BirthDateValidate(c);
+                a.ErrorMessages(4);            
             }
 
         }
