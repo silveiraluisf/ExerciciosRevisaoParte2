@@ -57,36 +57,36 @@ namespace Cliente.view
             Console.WriteLine("---- BEM-VINDO AO CADASTRO DE CLIENTE -----");
             Console.WriteLine("");
         }
-        public void GetName(Client C)
+        public void GetName()
         {
             Console.WriteLine("Insira o nome do cliente: ");
             this._inputName = Console.ReadLine();           
         }
 
-        public void GetCPF(Client C)
+        public void GetCPF()
         {
             Console.WriteLine("Insira o CPF: ");
             this._inputCPF = Console.ReadLine();
         }
 
-        public void GetDate(Client C)
+        public void GetDate()
         {
             Console.WriteLine("Insira da data de nascimento (dd/mm/aaaa): ");
             this._inputDate = Console.ReadLine();
         }
-        public void GetIncome(Client C)
+        public void GetIncome()
         {
             Console.WriteLine("Insira a renda mensal: ");
             this._inputIncome = Console.ReadLine();
         }
 
-        public void GetStatus(Client C)
+        public void GetStatus()
         {
             Console.WriteLine("Insira o estado civil (C, S, V ou D):  ");
             this._inputStatus = Console.ReadLine();
         }
 
-        public void GetDependents(Client C)
+        public void GetDependents()
         {
             Console.WriteLine("Insira o número de dependentes (de 0 a 10):  ");
             this._inputNOfDependents = Console.ReadLine();
