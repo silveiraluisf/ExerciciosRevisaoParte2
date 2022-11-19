@@ -1,6 +1,6 @@
-﻿using Cliente.entidade;
+﻿using Cliente.model;
 
-namespace Cliente.limite
+namespace Cliente.view
 {
     public class Interface
     {

@@ -1,7 +1,7 @@
-﻿using Cliente.limite;
-using Cliente.entidade;
+﻿using Cliente.view;
+using Cliente.model;
 
-namespace Cliente.controle
+namespace Cliente.controller
 {
     internal class SystemController
     {

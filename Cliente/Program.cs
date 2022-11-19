@@ -1,6 +1,6 @@
-﻿using Cliente.controle;
-using Cliente.entidade;
-using Cliente.limite;
+﻿using Cliente.controller;
+using Cliente.model;
+using Cliente.view;
 
 namespace Cliente
 {

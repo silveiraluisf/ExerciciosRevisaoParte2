@@ -1,4 +1,4 @@
-﻿namespace Cliente.entidade
+﻿namespace Cliente.model
 {
     public class Client
     {
