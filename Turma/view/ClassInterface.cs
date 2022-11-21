@@ -36,17 +36,17 @@ namespace Turma.view
         }
         public void GetRegistration()
         {
-            Console.WriteLine("Insira o nome do aluno: ");
+            Console.WriteLine("Insira a matrícula do aluno: ");
             this._inputRegistration = Console.ReadLine();
         }
         public void GetP1()
         {
-            Console.WriteLine("Insira o nome do aluno: ");
+            Console.WriteLine("Insira a nota da primeira prova: ");
             this._inputP1 = Console.ReadLine();
         }
         public void GetP2()
         {
-            Console.WriteLine("Insira o nome do aluno: ");
+            Console.WriteLine("Insira a nota da segunda prova ");
             this._inputP2 = Console.ReadLine();
         }
         public void ShowStudents(Student student)
