@@ -1,28 +1,46 @@
 ﻿using Turma.model;
 using Aluno.model;
 using Turma.view;
+using Aluno.controller;
+using Aluno.view;
+using System.Xml.Linq;
 
 namespace Turma.controller
 {
     public class ClassController
     {
-        public void AddStudent(Student s, Class c)
+        StudentController x;
+        SystemController y;
+       
+        public void AddStudent(StudentInterface i, Class c)
         {
-            List<Student> students = c.ListOfStudents;
-            students.Add(s);
+            //Student student = new Student();          
+            //x.CreateStudent(i, student);
+            Console.WriteLine("print antes de add");
+            Console.WriteLine($"{c.ListOfStudents.Count}");
+            c.ListOfStudents.Add(new Student() { Name = "dedede", Registration = 123123123 });
+            Console.WriteLine("print depois de add");
+            Console.WriteLine($"{c.ListOfStudents.Count}");
+            GetStudents(c);
+            //c.ListOfStudents?.Add(student);
+            //y.OpenInterface();
+            //this.AddStudent(i, c);
+            y.OpenInterface();
         }
-        public void RemoveStudent(Student s, Class c)
+        public void RemoveStudent(Student s)
         {
-            List<Student> students = c.ListOfStudents;
-            students.Remove(s);
+            //c.ListOfStudents?.Remove(s);
+            y.OpenInterface();
         }
-        public void GetStudents(Class c, ClassInterface a)
+        public void GetStudents(Class c)
         {
-            List<Student> students = c.ListOfStudents;
-            foreach (Student s in students)
+            for (int i = 0; i < c.ListOfStudents.Count; i++) 
             {
-                a.ShowStudents(s);
+                Console.WriteLine("teste");
+                Student s = c.ListOfStudents[i];
+                Console.WriteLine($"{s.Name}");
             }
+            //y.OpenInterface();
         }
         public void GetMaxScore(Class c)
         {

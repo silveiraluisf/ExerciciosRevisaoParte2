@@ -1,10 +1,25 @@
 ﻿using Aluno.model;
 using Aluno.view;
+using System.Runtime.InteropServices;
 
 namespace Aluno.controller
 {
     public class StudentController
     {
+        public void CreateStudent(StudentInterface a, Student s) 
+        {
+            AddStudentName(a);
+            NameValidate(a, s);
+            AddStudentRegistrationNumber(a);
+            RegistrationValidate(a, s);
+            P1Grade(a);
+            P1Validate(a, s);
+            P2Grade(a);
+            P2Validate(a, s);
+            FinalScore(s);
+            ShowStudent(a, s);
+        }
+
         public void AddStudentName(StudentInterface a)
         {
             a.GetName();

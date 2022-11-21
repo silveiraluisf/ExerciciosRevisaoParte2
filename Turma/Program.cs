@@ -7,7 +7,7 @@ namespace Turma
         static public void Main()
         {
             SystemController s = new SystemController();
-            s.openInterface();
+            s.OpenInterface();
         }
     }
 }

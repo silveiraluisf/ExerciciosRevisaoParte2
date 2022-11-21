@@ -4,27 +4,21 @@ namespace Turma.model
 {
     public class Class
     {
-        //private List<Student>? _listOfStudents {};
-        //private double _P1;
-        //private double _P2;
-        //private double _FS;
+        private List<Student> _ListOfStudents = new();
 
-        public List<Student>? ListOfStudents
+        public List<Student> ListOfStudents
         {
-            get; set;
+            get { return _ListOfStudents; }
+            set { _ListOfStudents = value; }
         }
 
-        public double P1Average
+        public double P1Average { get; set; }
+        public double P2Average { get; set; }
+        public double FSAverage { get; set; }
+
+        public Class(List<Student> students)
         {
-            get; set;
-        }
-        public double P2Average
-        {
-            get; set;
-        }
-        public double FSAverage
-        {
-            get; set;       
+            _ListOfStudents = students;
         }
     }
 }

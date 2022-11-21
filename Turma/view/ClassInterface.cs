@@ -18,10 +18,10 @@ namespace Turma.view
             set { _errorList = value; }
         }
         
-        public void ShowStudents(Class c, Student s)
+        public void ShowStudents(Array l)
         {
-            List<Student> students = c.ListOfStudents;
-            Console.WriteLine($"Nome: {students}");
+            Console.WriteLine($"Nome: {l}");
+            Console.WriteLine("");
         }
         public void Tittle()
         {
