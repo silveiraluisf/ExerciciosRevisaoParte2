@@ -10,7 +10,7 @@
 
         public string Name
         {
-            get { return _name; }
+            get => _name;
             set { _name = value; }
         }
         public long Registration
@@ -20,7 +20,7 @@
         }
         public double P1
         {
-            get { return _p1; }
+            get { return _p1;}
             set { _p1 = value; }
         }
         public double P2

@@ -1,2 +1,13 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Turma.controller;
+
+namespace Turma
+{
+    class Program
+    {
+        static public void Main()
+        {
+            SystemController s = new SystemController();
+            s.openInterface();
+        }
+    }
+}

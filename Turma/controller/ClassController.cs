@@ -6,7 +6,7 @@ namespace Turma.controller
 {
     public class ClassController
     {
-        public void AddStudent(List<Student> students, ClassInterface a)
+        public void AddStudent(Class c, ClassInterface a, SystemController s)
         {
             Student student= new Student();
             student.Name = a.InputName;
@@ -14,16 +14,17 @@ namespace Turma.controller
             long outputRegistration;
             long.TryParse(inputRegistration, out outputRegistration);
             student.Registration= outputRegistration;
-            students.Add(student);
+            c.ListOfStudents.Add(student);
+            s.openInterface();
         }
-        public void RemoveStudent(List<Student> students, ClassInterface a)
+        public void RemoveStudent(Class c, ClassInterface a)
         {
             Student student = new Student();
             string inputRegistration = a.InputRegistration;
             long outputRegistration;
             long.TryParse(inputRegistration, out outputRegistration);
             student.Registration = outputRegistration;
-            students.Remove(student); 
+            c.ListOfStudents.Remove(student); 
         }
 
         public void AddP1(Student student, ClassInterface a)
@@ -41,10 +42,11 @@ namespace Turma.controller
             student.P1 = outputP2;
         }
 
-        public void GetStudents(List<Student> c, ClassInterface a)
+        public void GetStudents(Class c, ClassInterface a)
         {
-            c = c.OrderBy(e => e.Name).ToList();
-            foreach (Student student in c) 
+            List<Student> students = c.ListOfStudents;
+            students.OrderBy(e => e.Name).ToList();
+            foreach (Student student in students) 
             {
                 a.ShowStudents(student);
             }

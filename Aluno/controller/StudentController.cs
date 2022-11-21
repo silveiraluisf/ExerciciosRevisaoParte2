@@ -1,5 +1,4 @@
 ﻿using Aluno.model;
-using System.IO.IsolatedStorage;
 
 namespace Aluno.controller
 {
@@ -15,7 +14,7 @@ namespace Aluno.controller
         }
         public double FinalScore(Student s)
         {
-            return s.FinalScore = (s.P1 + s.P2)/2 ;
+            return (s.FinalScore = (s.P1 + s.P2)/2);
         }
     }
 }
