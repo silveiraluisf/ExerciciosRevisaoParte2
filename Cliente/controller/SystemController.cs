@@ -9,7 +9,7 @@ namespace Cliente.controller
             object value = new ClientController();
         }
 
-        public void openInterface()
+        public void OpenInterface()
         {
             ClientController x = new ClientController();
             Interface a = new Interface();

@@ -6,74 +6,50 @@ namespace Turma.controller
 {
     public class ClassController
     {
-        public void AddStudent(Class c, ClassInterface a, SystemController s)
+        public void AddStudent(Student s, Class c)
         {
-            Student student= new Student();
-            student.Name = a.InputName;
-            string inputRegistration = a.InputRegistration;
-            long outputRegistration;
-            long.TryParse(inputRegistration, out outputRegistration);
-            student.Registration= outputRegistration;
-            c.ListOfStudents.Add(student);
-            s.openInterface();
+            List<Student> students = c.ListOfStudents;
+            students.Add(s);
         }
-        public void RemoveStudent(Class c, ClassInterface a)
+        public void RemoveStudent(Student s, Class c)
         {
-            Student student = new Student();
-            string inputRegistration = a.InputRegistration;
-            long outputRegistration;
-            long.TryParse(inputRegistration, out outputRegistration);
-            student.Registration = outputRegistration;
-            c.ListOfStudents.Remove(student); 
+            List<Student> students = c.ListOfStudents;
+            students.Remove(s);
         }
-
-        public void AddP1(Student student, ClassInterface a)
-        {
-            string inputP1 = a.P1;
-            double outputP1;
-            double.TryParse(inputP1, out outputP1);
-            student.P1 = outputP1;
-        }
-        public void AddP2(Student student, ClassInterface a)
-        {
-            string inputP2 = a.P2;
-            double outputP2;
-            double.TryParse(inputP2, out outputP2);
-            student.P1 = outputP2;
-        }
-
         public void GetStudents(Class c, ClassInterface a)
         {
             List<Student> students = c.ListOfStudents;
-            students.OrderBy(e => e.Name).ToList();
-            foreach (Student student in students) 
+            foreach (Student s in students)
             {
-                a.ShowStudents(student);
+                a.ShowStudents(s);
             }
         }
+        public void GetMaxScore(Class c)
+        {
+            List<Student> students = c.ListOfStudents;
+            double maxScore = (double)students.Max(s => s.FinalGrade);
+        }
+        public void GetP1Average(Class c)
+        {
+            List<Student> students = c.ListOfStudents;
+            double sum = (double)students.Sum(s => s.P1);
+            double average = sum/students.Count;
+            c.P1Average = average;
+        }
+        public void GetP2Avergage(Class c)
+        {
+            List<Student> students = c.ListOfStudents;
+            double sum = (double)students.Sum(s => s.P2);
+            double average = sum / students.Count;
+            c.P2Average = average;
+        }
 
-        public void GetMaxScore(List<Student> c)
+        public void GetFSAverage(Class c)
         {
-            double maxScore = c.Max(s => s.FinalScore);
-        }
-        public void P1Average(List<Student> c, Class t)
-        {
-            double sum = c.Sum(s => s.P1);
-            double average = sum/c.Count;
-            t.P1 = average;
-        }
-        public void P2Avergage(List<Student> c, Class t)
-        {
-            double sum = c.Sum(s => s.P2);
-            double average = sum / c.Count;
-            t.P2 = average;
-        }
-
-        public void FSAverage(List<Student> c, Class t)
-        {
-            double sum = c.Sum(s => s.FinalScore);
-            double average = sum / c.Count;
-            t.FS= average;
+            List<Student> students = c.ListOfStudents;
+            double sum = (double)students.Sum(s => s.FinalGrade);
+            double average = sum / students.Count;
+            c.FSAverage = average;
         }
         public void ClassStatics()
         {

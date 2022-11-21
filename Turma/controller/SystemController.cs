@@ -1,20 +1,25 @@
-﻿using Turma.model;
+﻿using Aluno.model;
+using Turma.model;
 using Turma.view;
 
 namespace Turma.controller
 {
     public class SystemController
     {
+        public SystemController() 
+        {
+            object value = new ClassController();
+        }
         public void openInterface()
         {
-            SystemController s = new SystemController();
             ClassController x = new ClassController();
             ClassInterface a = new ClassInterface();
             Class c = new Class();
+            Student s= new Student();
             a.Tittle();
-            SelectOption(a, x, c , s);
+            SelectOption(a, x, c, s );
         }
-        public void SelectOption(ClassInterface a, ClassController x, Class c, SystemController s)
+        public void SelectOption(ClassInterface a, ClassController x, Class c, Student s)
         {
             a.Options();
             string input = a.Option;
@@ -27,13 +32,10 @@ namespace Turma.controller
                     case 0:
                         break;
                     case 1:
-                        a.GetName();
-                        a.GetRegistration();
-                        x.AddStudent(c, a, s);
+                        x.AddStudent(s, c);
                         break;
                     case 2:
-                        a.GetRegistration();
-                        x.RemoveStudent(c, a);
+                        x.RemoveStudent(s, c);
                         break;
                     case 3:
                         x.GetStudents(c, a);

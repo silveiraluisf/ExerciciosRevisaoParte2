@@ -1,2 +1,13 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Aluno.controller;
+
+namespace Aluno
+{
+    class Program
+    {
+        static public void Main()
+        {
+            SystemController s = new SystemController();
+            s.OpenInterface();
+        }
+    }
+}

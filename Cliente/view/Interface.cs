@@ -92,16 +92,16 @@ namespace Cliente.view
             this._inputNOfDependents = Console.ReadLine();
         }
 
-        public void ShowData(Client C)
+        public void ShowData(Client c)
         {
             Console.WriteLine("---- CLIENTE CADASTRADO ----");
             Console.WriteLine("");
-            Console.WriteLine($"Nome: {C.Name}");
-            Console.WriteLine($"CPF: {C.CPF.ToString("00000000000")}");
-            Console.WriteLine($"Data de nascimento: {C.BirthDate.ToString("dd/MM/yyyy")}");
-            Console.WriteLine($"Renda mensal: {C.MonthlyIncome}");
-            Console.WriteLine($"Estado civil: {C.MaritalStatus}");
-            Console.WriteLine($"Número de dependentes: {C.NumberOfDependents}");
+            Console.WriteLine($"Nome: {c.Name}");
+            Console.WriteLine($"CPF: {c.CPF.ToString("00000000000")}");
+            Console.WriteLine($"Data de nascimento: {c.BirthDate.ToString("dd/MM/yyyy")}");
+            Console.WriteLine($"Renda mensal: {c.MonthlyIncome}");
+            Console.WriteLine($"Estado civil: {c.MaritalStatus}");
+            Console.WriteLine($"Número de dependentes: {c.NumberOfDependents}");
 
         }
 
