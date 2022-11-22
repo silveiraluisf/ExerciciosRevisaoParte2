@@ -38,7 +38,7 @@ namespace Turma.controller
                         y.GetStudents(x, this, a);
                         break;
                     case 4:
-                        y.ClassStatics(a);
+                        y.ClassStatics(a, this);
                         break;
                     case 5:
                         y.SetP1(i, x, this);

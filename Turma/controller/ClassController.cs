@@ -93,13 +93,14 @@ namespace Turma.controller
             }
             y.OpenInterface();
         }
-        public void ClassStatics(ClassInterface a)
+        public void ClassStatics(ClassInterface a, SystemController y)
         {
             this.GetP1Average(c);
             this.GetP2Avergage(c);
             this.GetFSAverage(c);
             this.GetMaxScore(c);
             a.ShowStatics(c);
+            y.OpenInterface();
         }
     }
 }
