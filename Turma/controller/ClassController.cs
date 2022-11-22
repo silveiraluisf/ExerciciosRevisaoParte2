@@ -65,22 +65,33 @@ namespace Turma.controller
         }
         public void SetP1(StudentInterface i, StudentController x, SystemController y)
         {
-            for (int n = 0; n < c.ListOfStudents.Count; n++) 
-            {
-                Student student = c.ListOfStudents[n];
-                x.P1Grade(i, student);
-                y.OpenInterface();
-            }
-                
-        }
-        public void SetP2(StudentInterface i, StudentController x, SystemController y)
-        {
+            i.GetRegistration();
+            string inputRegistration = i.InputRegistration;
+            long.TryParse(inputRegistration, out long outputRegistration);
             for (int n = 0; n < c.ListOfStudents.Count; n++)
             {
                 Student student = c.ListOfStudents[n];
-                x.P2Grade(i, student);
-                y.OpenInterface();
+                if (student.Registration == outputRegistration)
+                {                   
+                    x.P1Grade(i, student);
+                }
+            }              
+            y.OpenInterface();
+        }
+        public void SetP2(StudentInterface i, StudentController x, SystemController y)
+        {
+            i.GetRegistration();
+            string inputRegistration = i.InputRegistration;
+            long.TryParse(inputRegistration, out long outputRegistration);
+            for (int n = 0; n < c.ListOfStudents.Count; n++)
+            {
+                Student student = c.ListOfStudents[n];
+                if (student.Registration == outputRegistration)
+                {
+                    x.P2Grade(i, student);
+                }
             }
+            y.OpenInterface();
         }
         public void ClassStatics(ClassInterface a)
         {

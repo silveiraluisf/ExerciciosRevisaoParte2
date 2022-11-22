@@ -1,9 +1,7 @@
 ﻿using Aluno.controller;
-using Aluno.model;
 using Aluno.view;
 using Turma.view;
-using Turma.model;
-using System.Net;
+
 
 namespace Turma.controller
 {
@@ -13,13 +11,12 @@ namespace Turma.controller
         StudentController x = new();
         ClassController y = new();
         StudentInterface i = new();
-        Student s = new();
         public void OpenInterface()
         {                       
             a.Tittle();
-            SelectOption(x , y, i, s, a);
+            SelectOption(x , y, i, a);
         }
-        public void SelectOption(StudentController x, ClassController y, StudentInterface i, Student s, ClassInterface a)
+        public void SelectOption(StudentController x, ClassController y, StudentInterface i, ClassInterface a)
         {
             a.Options();
             string input = a.Option;
