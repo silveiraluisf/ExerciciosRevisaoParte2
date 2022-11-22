@@ -2,6 +2,8 @@
 using Aluno.model;
 using Aluno.view;
 using Turma.view;
+using Turma.model;
+using System.Net;
 
 namespace Turma.controller
 {
@@ -15,9 +17,9 @@ namespace Turma.controller
         public void OpenInterface()
         {                       
             a.Tittle();
-            SelectOption(x , y, i, s);
+            SelectOption(x , y, i, s, a);
         }
-        public void SelectOption(StudentController x, ClassController y, StudentInterface i, Student s)
+        public void SelectOption(StudentController x, ClassController y, StudentInterface i, Student s, ClassInterface a)
         {
             a.Options();
             string input = a.Option;
@@ -36,9 +38,10 @@ namespace Turma.controller
                         y.RemoveStudent(this);
                         break;
                     case 3:
-                        y.GetStudents(x, this);
+                        y.GetStudents(x, this, a);
                         break;
                     case 4:
+                        y.ClassStatics(a);
                         break;
                     case 5:
                         y.SetP1(i, x, this);

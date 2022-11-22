@@ -44,7 +44,6 @@ namespace Aluno.controller
                 long.TryParse(inputRegistration, out long outputRegistration);
                 if (student.Registration == outputRegistration)
                 {
-                    Console.WriteLine("teste 2");
                     a.GetP2();
                     P2Validate(a, student);
                 }
@@ -151,5 +150,4 @@ namespace Aluno.controller
             }
         }
     }
-
 }

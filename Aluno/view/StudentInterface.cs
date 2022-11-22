@@ -41,17 +41,17 @@ namespace Aluno.view
         }
         public void GetRegistration()
         {
-            Console.WriteLine("Insira a matrícula do aluno: ");
+            Console.WriteLine("Insira a matrícula do aluno (9 dígitos): ");
             this._inputRegistration = Console.ReadLine();
         }
         public void GetP1()
         {
-            Console.WriteLine("Insira a nota da primeira prova: ");
+            Console.WriteLine("Insira a nota da primeira prova (0 a 10): ");
             this._inputP1 = Console.ReadLine();
         }
         public void GetP2()
         {
-            Console.WriteLine("Insira a nota da segunda prova ");
+            Console.WriteLine("Insira a nota da segunda prova (0 a 10): ");
             this._inputP2 = Console.ReadLine();
         }
         public void ShowData(Student s)
@@ -62,6 +62,7 @@ namespace Aluno.view
             Console.WriteLine($"Nome: {s.Name}");
             Console.WriteLine($"Matrícula: {s.Registration}");
             Console.WriteLine($"Média final: {s.FinalGrade}");
+            Console.WriteLine("");
         }
     }
 }

@@ -15,6 +15,7 @@ namespace Turma.model
         public double P1Average { get; set; }
         public double P2Average { get; set; }
         public double FSAverage { get; set; }
+        public double MaxScore { get; set; }
 
         public Class(List<Student> students)
         {

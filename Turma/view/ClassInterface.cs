@@ -17,12 +17,6 @@ namespace Turma.view
             get { return _errorList; }
             set { _errorList = value; }
         }
-        
-        public void ShowStudents(Array l)
-        {
-            Console.WriteLine($"Nome: {l}");
-            Console.WriteLine("");
-        }
         public void Tittle()
         {
             Console.WriteLine("---- TELA DE CONTROLE DA TURMA ----");
@@ -37,6 +31,19 @@ namespace Turma.view
             Console.WriteLine("5 = Lançar nota da P1 para aluno.");
             Console.WriteLine("6 = Lançar nota da P2 para aluno.");
             this._inputOption = Console.ReadLine();            
+        }
+        public void ShowStudents(Student s)
+        {
+            Console.WriteLine($"Nome: {s.Name} | Matrícula: {s.Registration} | Nota final: {s.FinalGrade} | Nota P1: {s.P1} | Nota P2: {s.P2}");
+        }
+        public void ShowStatics(Class c)
+        {
+            Console.WriteLine($"---- ESTATÍSTICAS DA TURMA ----");
+            Console.WriteLine($"Média das notas finais: {c.FSAverage}");
+            Console.WriteLine($"Média das notas da P1: {c.P1Average}");
+            Console.WriteLine($"Média das notas da P2: {c.P2Average}");
+            Console.WriteLine($"Nota mais alta da turma: {c.MaxScore}");
+            Console.WriteLine($"");
         }
         public void ErrorMessages(int n)
         {

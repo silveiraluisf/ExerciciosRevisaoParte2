@@ -1,4 +1,5 @@
 ﻿using Turma.model;
+using Turma.view;
 using Aluno.model;
 using Aluno.controller;
 using Aluno.view;
@@ -23,14 +24,14 @@ namespace Turma.controller
             c.ListOfStudents.Remove(s);
             y.OpenInterface();
         }
-        public void GetStudents(StudentController x, SystemController y)
+        public void GetStudents(StudentController x, SystemController y, ClassInterface a)
         {
             List<Student> ordenedList = c.ListOfStudents.OrderBy(s => s.Name).ToList();
             for (int i = 0; i < ordenedList.Count; i++) 
             {
                 Student s = ordenedList[i];
                 x.FinalScore(s);
-                Console.WriteLine($"Nome: {s.Name} | Matrícula: {s.Registration} | Nota final: {s.FinalGrade} | Nota P1: {s.P1} | Nota P2: {s.P2}");
+                a.ShowStudents(s);
             }
             y.OpenInterface();
         }
@@ -38,6 +39,7 @@ namespace Turma.controller
         {
             List<Student> students = c.ListOfStudents;
             double maxScore = (double)students.Max(s => s.FinalGrade);
+            c.MaxScore = maxScore;
         }
         public void GetP1Average(Class c)
         {
@@ -80,11 +82,13 @@ namespace Turma.controller
                 y.OpenInterface();
             }
         }
-        public void ClassStatics()
+        public void ClassStatics(ClassInterface a)
         {
-            //c.FSAverage();
-            //c.P2Average();
-           // c.P1Average();
+            this.GetP1Average(c);
+            this.GetP2Avergage(c);
+            this.GetFSAverage(c);
+            this.GetMaxScore(c);
+            a.ShowStatics(c);
         }
     }
 }
