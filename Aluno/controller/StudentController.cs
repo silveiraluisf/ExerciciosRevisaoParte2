@@ -9,8 +9,9 @@ namespace Aluno.controller
         {
             AddStudentName(a);
             NameValidate(a, s);
-            AddStudentRegistrationNumber(a);
-            RegistrationValidate(a, s);          
+            GenerateRegistrationNUmber(s);
+            //AddStudentRegistrationNumber(a);
+            //RegistrationValidate(a, s);          
             ShowStudent(a, s);
         }
         public void AddStudentName(StudentInterface a)
@@ -20,6 +21,12 @@ namespace Aluno.controller
         public void AddStudentRegistrationNumber(StudentInterface a)
         {
             a.GetRegistration();
+        }
+        public void GenerateRegistrationNUmber(Student s)
+        {
+            Random rnd = new Random();
+            long num = rnd.Next(100000000, 999999999);             
+            s.Registration = num;
         }
         public void P1Grade(StudentInterface a, Student student)
         {

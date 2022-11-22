@@ -7,7 +7,7 @@
 
         public string Name
         {
-            get => _name;
+            get { return _name; }
             set { _name = value; }
         }
         public long Registration
