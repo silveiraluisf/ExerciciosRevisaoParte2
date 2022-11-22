@@ -25,9 +25,10 @@ namespace Turma.controller
         }
         public void GetStudents(StudentController x, SystemController y)
         {
-            for (int i = 0; i < c.ListOfStudents.Count; i++) 
+            List<Student> ordenedList = c.ListOfStudents.OrderBy(s => s.Name).ToList();
+            for (int i = 0; i < ordenedList.Count; i++) 
             {
-                Student s = c.ListOfStudents[i];
+                Student s = ordenedList[i];
                 x.FinalScore(s);
                 Console.WriteLine($"Nome: {s.Name} | Matrícula: {s.Registration} | Nota final: {s.FinalGrade} | Nota P1: {s.P1} | Nota P2: {s.P2}");
             }
@@ -81,7 +82,9 @@ namespace Turma.controller
         }
         public void ClassStatics()
         {
-            //Fazer
+            //c.FSAverage();
+            //c.P2Average();
+           // c.P1Average();
         }
     }
 }
