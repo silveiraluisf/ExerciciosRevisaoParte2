@@ -9,9 +9,7 @@ namespace Aluno.controller
         {
             AddStudentName(a);
             NameValidate(a, s);
-            GenerateRegistrationNUmber(s);
-            //AddStudentRegistrationNumber(a);
-            //RegistrationValidate(a, s);          
+            GenerateRegistrationNUmber(s);          
             ShowStudent(a, s);
         }
         public void AddStudentName(StudentInterface a)

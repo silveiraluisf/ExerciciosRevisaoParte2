@@ -8,7 +8,7 @@ namespace Turma.controller
 {
     public class ClassController
     {
-        Class c = new(new List<Student>());
+        private Class c = new(new List<Student>());
 
         public void AddStudent(StudentInterface i, StudentController x, SystemController y)
         {
