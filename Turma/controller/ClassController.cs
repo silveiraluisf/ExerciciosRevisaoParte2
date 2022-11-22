@@ -1,38 +1,26 @@
 ﻿using Turma.model;
 using Aluno.model;
-using Turma.view;
 using Aluno.controller;
 using Aluno.view;
-using System.Xml.Linq;
 
 namespace Turma.controller
 {
     public class ClassController
     {
-        StudentController x;
-        SystemController y;
-       
-        public void AddStudent(StudentInterface i, Class c)
+        Class c = new(new List<Student>());
+
+        public void AddStudent(StudentInterface i, StudentController x)
         {
-            //Student student = new Student();          
-            //x.CreateStudent(i, student);
-            Console.WriteLine("print antes de add");
-            Console.WriteLine($"{c.ListOfStudents.Count}");
-            c.ListOfStudents.Add(new Student() { Name = "dedede", Registration = 123123123 });
-            Console.WriteLine("print depois de add");
-            Console.WriteLine($"{c.ListOfStudents.Count}");
-            GetStudents(c);
-            //c.ListOfStudents?.Add(student);
-            //y.OpenInterface();
-            //this.AddStudent(i, c);
-            y.OpenInterface();
+            Student student = new Student();
+            x.CreateStudent(i, student);
+            c.ListOfStudents.Add(student);
         }
-        public void RemoveStudent(Student s)
+        public void RemoveStudent()
         {
             //c.ListOfStudents?.Remove(s);
-            y.OpenInterface();
+            //y.OpenInterface();
         }
-        public void GetStudents(Class c)
+        public void GetStudents()
         {
             for (int i = 0; i < c.ListOfStudents.Count; i++) 
             {
