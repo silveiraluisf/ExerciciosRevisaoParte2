@@ -21,38 +21,46 @@ namespace Aluno.controller
         {
             a.GetRegistration();
         }
-        public void P1Grade(StudentInterface a, Student s)
+        public void P1Grade(StudentInterface a, Student student)
         {
-            if (s != null)
+            if (student != null)
             {
                 a.GetRegistration();
                 string inputRegistration = a.InputRegistration;
                 long.TryParse(inputRegistration, out long outputRegistration);
-                if(s.Registration == outputRegistration) 
+                if(student.Registration == outputRegistration) 
                 {
                     a.GetP1();
-                    P1Validate(a, s);
+                    P1Validate(a, student);
                 }               
             }
         }
-        public void P2Grade(StudentInterface a, Student s)
+        public void P2Grade(StudentInterface a, Student student)
         {
-            if (s != null)
+            if (student != null)
             {
                 a.GetRegistration();
                 string inputRegistration = a.InputRegistration;
                 long.TryParse(inputRegistration, out long outputRegistration);
-                if (s.Registration == outputRegistration)
+                if (student.Registration == outputRegistration)
                 {
-                    a.GetP1();
-                    P2Validate(a, s);
+                    Console.WriteLine("teste 2");
+                    a.GetP2();
+                    P2Validate(a, student);
                 }
             }
         }
         public void FinalScore(Student s)
         {
+            if (s.P1 == null)
+            {
+                s.P1 = 0;
+            }
+            if (s.P2 == null)
+            {
+                s.P2 = 0;
+            }
             s.FinalGrade = (s.P1 + s.P2)/2;
-
         }
         public void ShowStudent(StudentInterface a, Student s)
         {

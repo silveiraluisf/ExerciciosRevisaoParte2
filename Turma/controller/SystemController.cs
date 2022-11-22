@@ -36,15 +36,15 @@ namespace Turma.controller
                         y.RemoveStudent(this);
                         break;
                     case 3:
-                        y.GetStudents(this);
+                        y.GetStudents(x, this);
                         break;
                     case 4:
                         break;
                     case 5:
-                        y.SetP1(i, x, this, s);
+                        y.SetP1(i, x, this);
                         break;
                     case 6:
-                        y.SetP2(i, x, this, s);
+                        y.SetP2(i, x, this);
                         break;
                     default:
                         a.ErrorMessages(0);

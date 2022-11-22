@@ -23,12 +23,13 @@ namespace Turma.controller
             c.ListOfStudents.Remove(s);
             y.OpenInterface();
         }
-        public void GetStudents(SystemController y)
+        public void GetStudents(StudentController x, SystemController y)
         {
             for (int i = 0; i < c.ListOfStudents.Count; i++) 
             {
                 Student s = c.ListOfStudents[i];
-                Console.WriteLine($"Nome: {s.Name} | Nota final: {s.FinalGrade}");
+                x.FinalScore(s);
+                Console.WriteLine($"Nome: {s.Name} | Matrícula: {s.Registration} | Nota final: {s.FinalGrade} | Nota P1: {s.P1} | Nota P2: {s.P2}");
             }
             y.OpenInterface();
         }
@@ -59,15 +60,24 @@ namespace Turma.controller
             double average = sum / students.Count;
             c.FSAverage = average;
         }
-        public void SetP1(StudentInterface i, StudentController x, SystemController y, Student s)
+        public void SetP1(StudentInterface i, StudentController x, SystemController y)
         {
-            x.P1Grade(i, s);
-            y.OpenInterface();
+            for (int n = 0; n < c.ListOfStudents.Count; n++) 
+            {
+                Student student = c.ListOfStudents[n];
+                x.P1Grade(i, student);
+                y.OpenInterface();
+            }
+                
         }
-        public void SetP2(StudentInterface i, StudentController x, SystemController y, Student s)
+        public void SetP2(StudentInterface i, StudentController x, SystemController y)
         {
-            x.P2Grade(i, s);
-            y.OpenInterface();
+            for (int n = 0; n < c.ListOfStudents.Count; n++)
+            {
+                Student student = c.ListOfStudents[n];
+                x.P2Grade(i, student);
+                y.OpenInterface();
+            }
         }
         public void ClassStatics()
         {
