@@ -34,6 +34,8 @@ namespace Turma.view
             Console.WriteLine("2 = Remover aluno.");
             Console.WriteLine("3 = Mostrar lista de alunos.");
             Console.WriteLine("4 = Mostrar estatísticas da turma.");
+            Console.WriteLine("5 = Lançar nota da P1 para aluno.");
+            Console.WriteLine("6 = Lançar nota da P2 para aluno.");
             this._inputOption = Console.ReadLine();            
         }
         public void ErrorMessages(int n)

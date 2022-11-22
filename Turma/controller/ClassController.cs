@@ -9,26 +9,28 @@ namespace Turma.controller
     {
         Class c = new(new List<Student>());
 
-        public void AddStudent(StudentInterface i, StudentController x)
+        public void AddStudent(StudentInterface i, StudentController x, SystemController y)
         {
             Student student = new Student();
             x.CreateStudent(i, student);
             c.ListOfStudents.Add(student);
+            y.OpenInterface();
         }
-        public void RemoveStudent()
+        public void RemoveStudent(SystemController y)
         {
-            //c.ListOfStudents?.Remove(s);
-            //y.OpenInterface();
+            int n = 0; 
+            Student s = c.ListOfStudents[n];
+            c.ListOfStudents.Remove(s);
+            y.OpenInterface();
         }
-        public void GetStudents()
+        public void GetStudents(SystemController y)
         {
             for (int i = 0; i < c.ListOfStudents.Count; i++) 
             {
-                Console.WriteLine("teste");
                 Student s = c.ListOfStudents[i];
-                Console.WriteLine($"{s.Name}");
+                Console.WriteLine($"Nome: {s.Name} | Nota final: {s.FinalGrade}");
             }
-            //y.OpenInterface();
+            y.OpenInterface();
         }
         public void GetMaxScore(Class c)
         {
@@ -56,6 +58,16 @@ namespace Turma.controller
             double sum = (double)students.Sum(s => s.FinalGrade);
             double average = sum / students.Count;
             c.FSAverage = average;
+        }
+        public void SetP1(StudentInterface i, StudentController x, SystemController y, Student s)
+        {
+            x.P1Grade(i, s);
+            y.OpenInterface();
+        }
+        public void SetP2(StudentInterface i, StudentController x, SystemController y, Student s)
+        {
+            x.P2Grade(i, s);
+            y.OpenInterface();
         }
         public void ClassStatics()
         {

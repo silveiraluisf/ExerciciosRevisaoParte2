@@ -11,12 +11,13 @@ namespace Turma.controller
         StudentController x = new();
         ClassController y = new();
         StudentInterface i = new();
+        Student s = new();
         public void OpenInterface()
         {                       
             a.Tittle();
-            SelectOption(x , y, i);
+            SelectOption(x , y, i, s);
         }
-        public void SelectOption(StudentController x, ClassController y, StudentInterface i)
+        public void SelectOption(StudentController x, ClassController y, StudentInterface i, Student s)
         {
             a.Options();
             string input = a.Option;
@@ -29,15 +30,21 @@ namespace Turma.controller
                     case 0:
                         break;
                     case 1:
-                        y.AddStudent(i, x);
+                        y.AddStudent(i, x, this);
                         break;
                     case 2:
-                        y.RemoveStudent();
+                        y.RemoveStudent(this);
                         break;
                     case 3:
-                        y.GetStudents();
+                        y.GetStudents(this);
                         break;
                     case 4:
+                        break;
+                    case 5:
+                        y.SetP1(i, x, this, s);
+                        break;
+                    case 6:
+                        y.SetP2(i, x, this, s);
                         break;
                     default:
                         a.ErrorMessages(0);

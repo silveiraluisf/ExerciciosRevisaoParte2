@@ -1,6 +1,5 @@
 ﻿using Aluno.model;
 using Aluno.view;
-using System.Runtime.InteropServices;
 
 namespace Aluno.controller
 {
@@ -11,15 +10,9 @@ namespace Aluno.controller
             AddStudentName(a);
             NameValidate(a, s);
             AddStudentRegistrationNumber(a);
-            RegistrationValidate(a, s);
-            P1Grade(a);
-            P1Validate(a, s);
-            P2Grade(a);
-            P2Validate(a, s);
-            FinalScore(s);
+            RegistrationValidate(a, s);          
             ShowStudent(a, s);
         }
-
         public void AddStudentName(StudentInterface a)
         {
             a.GetName();
@@ -28,13 +21,33 @@ namespace Aluno.controller
         {
             a.GetRegistration();
         }
-        public void P1Grade(StudentInterface a)
+        public void P1Grade(StudentInterface a, Student s)
         {
-            a.GetP1();
+            if (s != null)
+            {
+                a.GetRegistration();
+                string inputRegistration = a.InputRegistration;
+                long.TryParse(inputRegistration, out long outputRegistration);
+                if(s.Registration == outputRegistration) 
+                {
+                    a.GetP1();
+                    P1Validate(a, s);
+                }               
+            }
         }
-        public void P2Grade(StudentInterface a)
+        public void P2Grade(StudentInterface a, Student s)
         {
-            a.GetP2();
+            if (s != null)
+            {
+                a.GetRegistration();
+                string inputRegistration = a.InputRegistration;
+                long.TryParse(inputRegistration, out long outputRegistration);
+                if (s.Registration == outputRegistration)
+                {
+                    a.GetP1();
+                    P2Validate(a, s);
+                }
+            }
         }
         public void FinalScore(Student s)
         {

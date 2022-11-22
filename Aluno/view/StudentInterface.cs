@@ -34,7 +34,6 @@ namespace Aluno.view
             Console.WriteLine("---- TELA DE CONTROLE DO ALUNO ----");
             Console.WriteLine("");
         }
-
         public void GetName()
         {
             Console.WriteLine("Insira o nome do aluno: ");
@@ -61,7 +60,7 @@ namespace Aluno.view
             Console.WriteLine("---- ESTUDANTE CADASTRADO ----");
             Console.WriteLine("");
             Console.WriteLine($"Nome: {s.Name}");
-            Console.WriteLine($"CPF: {s.Registration}");
+            Console.WriteLine($"Matrícula: {s.Registration}");
             Console.WriteLine($"Média final: {s.FinalGrade}");
         }
     }
